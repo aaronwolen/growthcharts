@@ -1,0 +1,10 @@
+Package: growr
+Type: Package
+Title: WHO growth charts
+Version: 0.1
+Date: 2015-02-03
+Author: Aaron Wolen
+Maintainer: Aaron Wolen <aaron@wolen.com>
+Description: Generate growth charts based on WHO data.
+License: MIT
+LazyData: TRUE
