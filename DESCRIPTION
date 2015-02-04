@@ -7,6 +7,7 @@ Author: Aaron Wolen
 Maintainer: Aaron Wolen <aaron@wolen.com>
 Description: Generate growth charts based on WHO data.
 Imports:
+    dplyr (>= 0.4),
     ggvis
 License: MIT
 LazyData: TRUE

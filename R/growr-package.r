@@ -8,5 +8,5 @@
 #' Maintainer: Aaron Wolen \email{aaron@@wolen.com}
 #' @name growr
 #' @docType package
-#' @import ggvis
+#' @import dplyr ggvis
 NULL
