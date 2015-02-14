@@ -34,7 +34,7 @@ tables <- Map(data.frame, gender = gender, tables)
 
 # split by data type
 .table <- split(tables, labels)
-.table <- lapply(.table, rbind_all)
+.table <- lapply(.table, bind_rows)
 
 # reshape
 .table <- lapply(.table, select, -L, -M, -S)
