@@ -55,6 +55,10 @@ clean_percentile <- function(x) {
 
 .table <- lapply(.table, mutate, percentile = clean_percentile(percentile))
 
+# lowercase column names
+.table <- lapply(.table, function(x) structure(x, names = tolower(names(x))))
+
+
 # descriptions
 attr(.table, "description") <- description[match(names(.table), labels)]
 

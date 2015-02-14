@@ -1,5 +1,4 @@
 #' Head circumference for age
-#'
 
 circumference_for_age <- function(circumference, age, gender = "male", unit.length = "in") {
 
@@ -11,6 +10,6 @@ circumference_for_age <- function(circumference, age, gender = "male", unit.leng
 
   data %>%
     group_by(percentile) %>%
-    ggvis(~Month, ~circumference, stroke = ~percentile) %>%
+    ggvis(~month, ~circumference, stroke = ~percentile) %>%
     layer_lines()
 }
