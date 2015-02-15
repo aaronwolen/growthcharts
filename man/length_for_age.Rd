@@ -8,6 +8,8 @@ length_for_age(length = NULL, age = NULL, gender = "male",
   units = c("cm", "month"))
 }
 \arguments{
+\item{length}{child's length}
+
 \item{age}{age in months at the time of trait measurment}
 
 \item{gender}{(\code{male} or \code{female})}

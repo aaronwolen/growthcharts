@@ -8,6 +8,8 @@ weight_for_age(weight = NULL, age = NULL, gender = "male",
   units = c("kg", "month"))
 }
 \arguments{
+\item{weight}{child's weight}
+
 \item{age}{age in months at the time of trait measurment}
 
 \item{gender}{(\code{male} or \code{female})}

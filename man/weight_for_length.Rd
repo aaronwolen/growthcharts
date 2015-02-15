@@ -8,6 +8,10 @@ weight_for_length(weight = NULL, length = NULL, gender = "male",
   units = c("kg", "cm"))
 }
 \arguments{
+\item{weight}{child's weight}
+
+\item{length}{child's length}
+
 \item{gender}{(\code{male} or \code{female})}
 
 \item{units}{character vector indicating the units of measures used for the
