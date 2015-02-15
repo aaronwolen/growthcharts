@@ -13,8 +13,14 @@ build_plot <- function(...) {
   df <- filter(df, gender == args$gender) %>% select(-gender)
 
   # rename arguments to matching variable names
+  args$units <- rev(args$units)
   xy <- names(args)[2:1]
   xy <- c(age = "month", circumference = "cm", length = "cm", weight = "kg")[xy]
+
+  # unit conversions
+  df[[args$units[1]]] <- convert(df[[xy[1]]], xy[1], args$units[1])
+  df[[args$units[2]]] <- convert(df[[xy[2]]], xy[2], args$units[2])
+  xy <-args$units
 
   # plot
   df %>%
