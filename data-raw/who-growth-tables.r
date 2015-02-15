@@ -63,9 +63,10 @@ vars <- c(gender = "gender",
           percentile = "percentile",
           circumference = "cm",
           Length = "cm",
+          length = "cm",
           weight = "kg" )
 
-.table <- lapply(.table, function(x) structure(x, names = vars[names(x)]))
+.table <- lapply(.table, function(x) structure(x, names = unname(vars[names(x)])))
 
 # descriptions
 attr(.table, "description") <- description[match(names(.table), labels)]
