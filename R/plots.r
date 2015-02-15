@@ -25,7 +25,7 @@ build_plot <- function(...) {
   df <- filter(df, gender == args$gender) %>% select(-gender)
 
   # rename arguments to matching variable names
-  xy <- names(args)[1:2]
+  xy <- names(args)[2:1]
   xy <- c(age = "month", circumference = "cm", length = "cm", weight = "kg")[xy]
 
   # plot
