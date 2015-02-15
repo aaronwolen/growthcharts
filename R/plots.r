@@ -1,13 +1,13 @@
 #' Head circumference for age
 
-circumference_for_age <- function(circumference = NULL, age = NULL, gender = "male", unit.length = "in") {
+circumference_for_age <- function(circumference = NULL, age = NULL, gender = "male", unit.length = "cm") {
   build_plot(circumference, age, gender, unit.length)
 }
 
 
 #' Head circumference for age
 
-weight_for_length <- function(weight = NULL, length = NULL, gender = "male", unit.length = "lb") {
+weight_for_length <- function(weight = NULL, length = NULL, gender = "male", unit.length = "kg") {
   build_plot(weight, length, gender, unit.length)
 }
 
@@ -24,12 +24,13 @@ build_plot <- function(...) {
 
   df <- filter(df, gender == args$gender) %>% select(-gender)
 
-  # rename category to matching variables
+  # rename arguments to matching variable names
   xy <- names(args)[1:2]
-  xy <- c(age = "month", circumference = "circumference")[xy]
+  xy <- c(age = "month", circumference = "cm", length = "cm", weight = "kg")[xy]
 
-  ggvis(df) %>%
+  df %>%
    group_by(percentile) %>%
+   ggvis() %>%
    layer_points(prop("x", as.name(xy[1])),
                 prop("y", as.name(xy[2])))
 }
