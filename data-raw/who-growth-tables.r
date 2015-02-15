@@ -1,4 +1,6 @@
 # Download WHO child growth data
+# .table contains individual data.frames named for categories (e.g., length.age)
+# variables are named for units (age = month, circumference = cm)
 
 library(rvest)
 library(stringr)
@@ -55,9 +57,15 @@ clean_percentile <- function(x) {
 
 .table <- lapply(.table, mutate, percentile = clean_percentile(percentile))
 
-# lowercase column names
-.table <- lapply(.table, function(x) structure(x, names = tolower(names(x))))
+# rename columns to be lowercase and reflect measured units
+vars <- c(gender = "gender",
+          Month = "month",
+          percentile = "percentile",
+          circumference = "cm",
+          Length = "cm",
+          weight = "kg" )
 
+.table <- lapply(.table, function(x) structure(x, names = vars[names(x)]))
 
 # descriptions
 attr(.table, "description") <- description[match(names(.table), labels)]
