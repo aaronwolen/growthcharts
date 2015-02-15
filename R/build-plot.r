@@ -20,7 +20,7 @@ build_plot <- function(...) {
   # unit conversions
   df[[args$units[1]]] <- convert(df[[xy[1]]], xy[1], args$units[1])
   df[[args$units[2]]] <- convert(df[[xy[2]]], xy[2], args$units[2])
-  xy <-args$units
+  xy <- args$units
 
   # plot
   df %>%
