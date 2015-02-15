@@ -5,7 +5,7 @@ circumference_for_age <- function(circumference = NULL, age = NULL, gender = "ma
 }
 
 
-#' Head circumference for age
+#' Weight for length
 
 weight_for_length <- function(weight = NULL, length = NULL, gender = "male", unit.length = "kg") {
   build_plot(weight, length, gender, unit.length)
@@ -28,9 +28,10 @@ build_plot <- function(...) {
   xy <- names(args)[1:2]
   xy <- c(age = "month", circumference = "cm", length = "cm", weight = "kg")[xy]
 
+  # plot
   df %>%
-   group_by(percentile) %>%
-   ggvis() %>%
-   layer_points(prop("x", as.name(xy[1])),
+    group_by(percentile) %>%
+    ggvis(stroke = ~percentile) %>%
+    layer_paths(prop("x", as.name(xy[1])),
                 prop("y", as.name(xy[2])))
 }
