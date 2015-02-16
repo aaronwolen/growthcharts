@@ -10,6 +10,7 @@ Imports:
     magrittr,
     dplyr (>= 0.4),
     ggvis,
+    lazyeval,
     scales
 License: MIT
 LazyData: TRUE

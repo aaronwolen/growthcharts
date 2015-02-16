@@ -26,9 +26,12 @@ build_plot <- function(...) {
   colors <- sym_pal(args$palette, levels(df$percentile))
   df$color <- colors[df$percentile]
 
+  df <- group_by(df, percentile)
+  p.df <- filter_(df, interp("x == max(x)", x = as.name(xy[2])))
+
   df %>%
-    group_by(percentile) %>%
-    ggvis(stroke :=~ color) %>%
-    layer_paths(prop("x", as.name(xy[1])),
-                prop("y", as.name(xy[2])))
+    ggvis(prop("x", as.name(xy[1])),
+          prop("y", as.name(xy[2]))) %>%
+    layer_paths(stroke :=~ color) %>%
+    layer_text(data = p.df, text := ~percentile, dx := 5, baseline := "middle")
 }

@@ -12,4 +12,5 @@
 #' @importFrom dplyr filter select group_by
 #' @importFrom ggvis ggvis layer_paths layer_points prop
 #' @importFrom scales brewer_pal
+#' @importFrom lazyeval interp
 NULL
