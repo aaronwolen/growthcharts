@@ -44,7 +44,7 @@ build_plot <- function(...) {
 
   # add user data
   if (!all(vapply(args[1:2], is.null, logical(1)))) {
-    user.df <- data.frame(setNames(args[2:1], xy))
+    user.df <- structure(data.frame(args[2:1]), names = xy)
     p <- layer_points(p, fill := args$color, stroke := "white", data = user.df)
   }
   print(p)
