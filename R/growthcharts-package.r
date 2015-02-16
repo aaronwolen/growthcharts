@@ -6,7 +6,7 @@
 #' Aaron Wolen \email{aaron@@wolen.com}
 #'
 #' Maintainer: Aaron Wolen \email{aaron@@wolen.com}
-#' @name growr
+#' @name growthcharts
 #' @docType package
 #' @importFrom magrittr %>%
 #' @importFrom dplyr filter filter_ select group_by
