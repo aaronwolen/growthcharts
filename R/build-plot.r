@@ -23,9 +23,12 @@ build_plot <- function(...) {
   xy <- args$units
 
   # plot
+  colors <- sym_pal(args$palette, levels(df$percentile))
+  df$color <- colors[df$percentile]
+
   df %>%
     group_by(percentile) %>%
-    ggvis(stroke = ~percentile) %>%
+    ggvis(stroke :=~ color) %>%
     layer_paths(prop("x", as.name(xy[1])),
                 prop("y", as.name(xy[2])))
 }

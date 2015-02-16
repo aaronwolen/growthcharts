@@ -34,3 +34,23 @@ convert <- function(x, from, to) {
   x * units[[from]][to]
 }
 
+
+# symmetrical colors pased on specified brewer palette
+sym_pal <- function(palette, levels) {
+
+  brewer = c("BrBG", "PiYG", "PRGn", "PuOr", "RdBu", "RdGy", "RdYlBu",
+             "RdYlGn", "Spectral",
+             "Blues", "BuGn", "BuPu", "GnBu", "Greens", "Greys", "Oranges",
+             "OrRd", "PuBu", "PuBuGn", "PuRd", "Purples", "RdPu", "Reds",
+             "YlGn", "YlGnBu", "YlOrBr", "YlOrRd")
+  palette <- match.arg(palette, brewer)
+
+
+  # add extra color to avoid using the lightest color
+  mid <- median(seq_along(levels))
+  cols <- brewer_pal(palette = palette)(mid + 1)[-1]
+  cols <- c(cols, rev(cols))
+  if (length(levels) %% 2) cols <- cols[-mid]
+  setNames(cols, levels)
+}
+
