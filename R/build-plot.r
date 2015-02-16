@@ -43,7 +43,9 @@ build_plot <- function(...) {
          add_axis("y", title = labels[2])
 
   # add user data
-  if (all(vapply(args[1:2], is.null, logical(1)))) return(p)
-  user.df <- data.frame(setNames(args[2:1], xy))
-  layer_points(p, fill := args$color, stroke := "white", data = user.df)
+  if (!all(vapply(args[1:2], is.null, logical(1)))) {
+    user.df <- data.frame(setNames(args[2:1], xy))
+    p <- layer_points(p, fill := args$color, stroke := "white", data = user.df)
+  }
+  print(p)
 }
