@@ -8,7 +8,7 @@
 #' @param palette color brewer palette applied to percentiles
 #' @export
 circumference_for_age <- function(circumference = NULL, age = NULL, gender = "male", units = c("cm", "month"), palette = "Greys") {
-  build_plot(circumference, age, gender, units)
+  build_plot(circumference, age, gender, units, palette)
 }
 
 
@@ -18,7 +18,7 @@ circumference_for_age <- function(circumference = NULL, age = NULL, gender = "ma
 #' @inheritParams circumference_for_age
 #' @export
 weight_for_length <- function(weight = NULL, length = NULL, gender = "male", units = c("kg", "cm"), palette = "Greys") {
-  build_plot(weight, length, gender, units)
+  build_plot(weight, length, gender, units, palette)
 }
 
 
@@ -27,7 +27,7 @@ weight_for_length <- function(weight = NULL, length = NULL, gender = "male", uni
 #' @inheritParams circumference_for_age
 #' @export
 length_for_age <- function(length = NULL, age = NULL, gender = "male", units = c("cm", "month"), palette = "Greys") {
-  build_plot(length, age, gender, units)
+  build_plot(length, age, gender, units, palette)
 }
 
 
@@ -36,5 +36,5 @@ length_for_age <- function(length = NULL, age = NULL, gender = "male", units = c
 #' @inheritParams circumference_for_age
 #' @export
 weight_for_age <- function(weight = NULL, age = NULL, gender = "male", units = c("kg", "month"), palette = "Greys") {
-  build_plot(weight, age, gender, units)
+  build_plot(weight, age, gender, units, palette)
 }
