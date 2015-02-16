@@ -22,16 +22,22 @@ build_plot <- function(...) {
   df[[args$units[2]]] <- convert(df[[xy[2]]], xy[2], args$units[2])
   xy <- args$units
 
-  # plot
+  # build plot
   colors <- sym_pal(args$palette, levels(df$percentile))
   df$color <- colors[df$percentile]
 
   df <- group_by(df, percentile)
-  p.df <- filter_(df, interp("x == max(x)", x = as.name(xy[2])))
+  percent.df <- filter_(df, interp("x == max(x)", x = as.name(xy[2])))
 
-  df %>%
-    ggvis(prop("x", as.name(xy[1])),
-          prop("y", as.name(xy[2]))) %>%
-    layer_paths(stroke :=~ color) %>%
-    layer_text(data = p.df, text := ~percentile, dx := 5, baseline := "middle")
+  p <- df %>%
+         ggvis(prop("x", as.name(xy[1])),
+               prop("y", as.name(xy[2]))) %>%
+         layer_paths(stroke :=~ color) %>%
+         layer_text(data = percent.df, text := ~percentile,
+                    dx := 5, baseline := "middle")
+
+  # add user data
+  if (all(vapply(args[1:2], is.null, logical(1)))) return(p)
+  user.df <- data.frame(setNames(args[2:1], xy))
+  layer_points(p, fill := args$color, stroke := "white", data = user.df)
 }
