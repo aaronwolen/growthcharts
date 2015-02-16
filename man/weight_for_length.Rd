@@ -5,7 +5,7 @@
 \title{Weight for length}
 \usage{
 weight_for_length(weight = NULL, length = NULL, gender = "male",
-  units = c("kg", "cm"), palette = "Greys")
+  units = c("kg", "cm"), color = "blue", palette = "Greys")
 }
 \arguments{
 \item{weight}{child's weight}
@@ -16,6 +16,8 @@ weight_for_length(weight = NULL, length = NULL, gender = "male",
 
 \item{units}{character vector indicating the units of measures used for the
 plotted traits}
+
+\item{color}{color applied to plotted points}
 
 \item{palette}{color brewer palette applied to percentiles}
 }

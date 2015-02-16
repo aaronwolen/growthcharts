@@ -5,7 +5,7 @@
 \title{Head circumference for age}
 \usage{
 circumference_for_age(circumference = NULL, age = NULL, gender = "male",
-  units = c("cm", "month"), palette = "Greys")
+  units = c("cm", "month"), color = "blue", palette = "Greys")
 }
 \arguments{
 \item{circumference}{head circumference}
@@ -16,6 +16,8 @@ circumference_for_age(circumference = NULL, age = NULL, gender = "male",
 
 \item{units}{character vector indicating the units of measures used for the
 plotted traits}
+
+\item{color}{color applied to plotted points}
 
 \item{palette}{color brewer palette applied to percentiles}
 }

@@ -5,7 +5,7 @@
 \title{Weight for age}
 \usage{
 weight_for_age(weight = NULL, age = NULL, gender = "male",
-  units = c("kg", "month"), palette = "Greys")
+  units = c("kg", "month"), color = "blue", palette = "Greys")
 }
 \arguments{
 \item{weight}{child's weight}
@@ -16,6 +16,8 @@ weight_for_age(weight = NULL, age = NULL, gender = "male",
 
 \item{units}{character vector indicating the units of measures used for the
 plotted traits}
+
+\item{color}{color applied to plotted points}
 
 \item{palette}{color brewer palette applied to percentiles}
 }

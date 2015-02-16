@@ -5,7 +5,7 @@
 \title{Length for age}
 \usage{
 length_for_age(length = NULL, age = NULL, gender = "male",
-  units = c("cm", "month"), palette = "Greys")
+  units = c("cm", "month"), color = "blue", palette = "Greys")
 }
 \arguments{
 \item{length}{child's length}
@@ -16,6 +16,8 @@ length_for_age(length = NULL, age = NULL, gender = "male",
 
 \item{units}{character vector indicating the units of measures used for the
 plotted traits}
+
+\item{color}{color applied to plotted points}
 
 \item{palette}{color brewer palette applied to percentiles}
 }
