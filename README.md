@@ -14,4 +14,4 @@ library(growthcharts)
 weight_for_age(weight = 8.5, age = 10)
 ```
 
-![](http://i.imgur.com/UfKlVeb.png)
+![](http://i.imgur.com/msboK3c.png)
