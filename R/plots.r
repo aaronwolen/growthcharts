@@ -14,6 +14,7 @@ circumference_for_age <- function(circumference = NULL, age = NULL, gender = "ma
 
 
 #' Weight for length
+#'
 #' @param weight child's weight
 #' @param length child's length
 #' @inheritParams circumference_for_age
@@ -24,6 +25,7 @@ weight_for_length <- function(weight = NULL, length = NULL, gender = "male", uni
 
 
 #' Length for age
+#'
 #' @inheritParams weight_for_length
 #' @inheritParams circumference_for_age
 #' @export
@@ -33,6 +35,7 @@ length_for_age <- function(length = NULL, age = NULL, gender = "male", units = c
 
 
 #' Weight for age
+#'
 #' @inheritParams weight_for_length
 #' @inheritParams circumference_for_age
 #' @export

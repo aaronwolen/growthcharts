@@ -4,9 +4,10 @@
 \name{growthcharts}
 \alias{growthcharts}
 \alias{growthcharts-package}
-\title{WHO growth charts}
+\title{Growth charts}
 \description{
-Generate growth charts based on WHO data.
+Growth charts for infants and children ages 0 to 2 using the World Health
+Organization's child growth standards.
 }
 \author{
 Aaron Wolen \email{aaron@wolen.com}
