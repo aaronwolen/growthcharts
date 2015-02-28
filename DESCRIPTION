@@ -1,11 +1,12 @@
 Package: growthcharts
 Type: Package
-Title: WHO growth charts
+Title: Growth charts
 Version: 0.1
 Date: 2015-02-03
 Author: Aaron Wolen
 Maintainer: Aaron Wolen <aaron@wolen.com>
-Description: Generate growth charts based on WHO data.
+Description: Growth charts for infants and children ages 0 to 2 using the
+    World Health Organization's child growth standards.
 Imports:
     magrittr,
     dplyr (>= 0.4),
