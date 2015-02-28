@@ -9,7 +9,7 @@ Description: Generate growth charts based on WHO data.
 Imports:
     magrittr,
     dplyr (>= 0.4),
-    ggvis,
+    ggvis (>= 0.4),
     lazyeval,
     scales
 License: MIT
